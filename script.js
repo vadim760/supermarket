@@ -1,10 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     const swiper = new Swiper(".mySwiper", {
-        loop:true,
-        slidesPerView: 4,
-        centeredSlides: false,
-        loopAddBlankSlides: true,
-        spaceBetween: 30,
+        breakpoints: {
+            1024: {
+                loop:true,
+                slidesPerView: 2,
+                centeredSlides: false,
+                loopAddBlankSlides: true,
+                spaceBetween: 100,
+            },
+            1920: {
+                loop:true,
+                slidesPerView: 4,
+                centeredSlides: false,
+                loopAddBlankSlides: true,
+                spaceBetween: 30,
+            },
+        },
+
         pagination: {
             el: ".swiper-pagination",
             clickable: true, 
@@ -19,18 +31,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+
     });
-
     function updateOpacity(swiperInstance) {
-        swiperInstance.slides.forEach(slide => slide.style.opacity = "1");
-
-
-        const fourthVisibleIndex = (swiperInstance.activeIndex + 3) % swiperInstance.slides.length;
-
-        swiperInstance.slides[fourthVisibleIndex].style.opacity = "0.5";
-
+        // Установим полную непрозрачность для всех слайдов
+        swiperInstance.slides.forEach(slide => (slide.style.opacity = "1"));
+    
+        // Определяем, какой индекс слайда изменять
+        let offsetIndex;
+        if (window.innerWidth <= 1024) {
+            // Для экранов с шириной 1024px или меньше
+            offsetIndex = 1; // Второй слайд
+        } else {
+            // Для остальных экранов
+            offsetIndex = 3; // Четвертый слайд
+        }
+    
+        const targetIndex = (swiperInstance.activeIndex + offsetIndex) % swiperInstance.slides.length;
+    
+        // Изменяем прозрачность целевого слайда
+        swiperInstance.slides[targetIndex].style.opacity = "0.5";
     }
-    updateOpacity(swiper);
+
+   
 
     const openPopup = document.querySelector('.call__back__link');
     const closePopup = document.querySelector('.close');

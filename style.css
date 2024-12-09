@@ -44,6 +44,9 @@ input {
 
 
 }
+button {
+    cursor: pointer;
+}
 .logo {
     cursor: pointer;
 }
@@ -618,6 +621,7 @@ input {
     box-shadow: 1px 1px 5px rgba(55, 55, 55, 0.5);
 }
 .dropdown__container {
+    cursor: pointer;
     margin-top: 2.5rem;
 }
 
@@ -642,6 +646,7 @@ input {
 }
 
 .dropdown__border {
+    
     padding-left: 5.3125rem;
     padding-right: 5.3125rem;
 
@@ -742,6 +747,9 @@ input {
     font-size: .875rem;
 
 }
+.footer__logo img {
+    cursor: pointer;
+}
 .footer__navigation {
     display: flex;
     flex-direction: column;
@@ -804,6 +812,111 @@ input {
     color: #FFFFFF;
     font-size: .875rem;
 }
+@media screen and (max-width:64rem) {
+    .container {
+        padding-left: 9.375rem;
+        padding-right: 9.375rem;
+    }
+    .call__back__number {
+        font-size: 1rem;
+    }
+    .popup__close {
+        display: none;
+        position: fixed;
+        
+        align-items: center;
+    
+        transform: translate(15%, 20%);
+    
+        z-index: 2;
+    
+    
+    
+    }
+    .services__cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .about__block {
+
+        position: relative;
+    
+        min-width: 30rem;
+        min-height: 37.5rem;
+    
+        background-color: #fff;
+    
+        border: 10px solid #F7F7F7;
+        border-radius: 1.25rem;
+    
+        
+    
+        margin-left: 0;
+    }
+    .about__items {
+        padding-left: 1.875rem;
+    }
+    .video {
+        
+        max-width: 31.25rem;
+        max-height: auto;
+        transform: translate(20%, -25%);
+    }
+    .flower {
+        transform: translate( -12%, 20%);
+    }
+    .services__bg {
+        margin-top: 12.5rem;
+    }
+
+    .swiper-slide {
+        max-width: 440px;
+        
+    }
+    .swiper-slide p {
+        font-weight: 300;
+        font-size: .875rem;
+        color: #636363;
+    }
+    .services__bg {
+        padding-bottom: 6.25rem;
+    }
+    .faq__number {
+        font-size: 18px;
+    }
+    .faq__text {
+        font-size: 1.25rem;
+        width: 35rem;
+    }
+    .dropdown__border.active {
+        height: 22rem;
+    }
+    .footer__text__links {
+        font-size: .875rem;
+    }
+    .footer__text {
+        font-size: .75rem;
+    }
+    .footer__text__number {
+        font-size: .875rem;
+    }
+    .item__navigation a {
+        font-size: .875rem;
+    }
+    .footer__logo {
+        gap: 1.25rem;
+    }
+    .footer__container {
+        display: flex;
+        align-items: center;
+        
+    }
+    .item__links {
+        max-width: 12.5rem;
+    }
+}
+
  @media screen and (min-width: 20rem) and (max-width: 48rem) {
     .container {
         padding: 1rem;
@@ -895,9 +1008,6 @@ input {
         margin-left: 0;
     }
     .about__items {
-        
-        
-
         padding-right: 1.875rem;
         padding-left: 1.875rem;
         padding-top: 1.875rem;
